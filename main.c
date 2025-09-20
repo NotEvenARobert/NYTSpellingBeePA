@@ -7,6 +7,35 @@ This program is written by: ANH NHAT LE (Robert) */
 #include <stdlib.h>
 #include <string.h>
 
+void swapChars(char *a, char *b) {
+    
+    char temp = *a;
+    *a = *b;
+    *b = temp;
+    
+}
+
+void sortLetters(char arr[], int n) {
+    
+    for (int a = 0; a < n - 1; a++) {
+        
+        int min_idx = a;
+        for (b = a + 1; b < n; b++) {
+            
+            if (arr[b] < arr[min_idx]) {
+                
+                min_idx = b;
+                
+            }
+            
+        }
+        
+        swapChars(&arr[a], &arr[min_idx]);
+        
+    }
+    
+}
+
 int main(void) {
     
     char letters[8];
@@ -18,4 +47,5 @@ int main(void) {
     middle = letters[3];
 
     return 0;
+    
 }
