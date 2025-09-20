@@ -10,11 +10,11 @@ This program is written by: ANH NHAT LE (Robert) */
 int main(void) {
     
     char letters[8];
-    int dic;
+    int dicwords;
     char middle;
     
     scanf("%s", letters);
-    scanf("%d", &dic);
+    scanf("%d", &dicwords);
     middle = letters[3];
 
     return 0;
