@@ -99,7 +99,6 @@ int main(void) {
 
     char **dictionary = (char**)malloc(n * sizeof(char*));
     char tempWord[MAXWORDSIZE];
-
     for(int d = 0; d < n; d++) {
         
         scanf("%s", tempWord);
@@ -107,6 +106,10 @@ int main(void) {
         strcpy(dictionary[d], tempWord);
         
     }
+
+    int perm[NUMLETTERS];
+    int used[NUMLETTERS] = {0};
+    findWords(letters, perm, used, 0);
         
     return 0;
     
