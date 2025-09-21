@@ -55,7 +55,7 @@ int main(void) {
         if(letters[c] == middle) {
             
             new_idx = c;
-            return new_idx;
+            break;
             
         }
         
