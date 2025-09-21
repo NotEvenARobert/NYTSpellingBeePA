@@ -63,7 +63,7 @@ int binarySearch(char** dictionary, char* word, int low, int high) {
         
     }
 
-    int mid = low + high / 2;
+    int mid = (low + high) / 2;
     int comparison = strcmp(word, dictionary[mid]);
     if(comparison == 0) {
         
