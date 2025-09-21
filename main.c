@@ -7,6 +7,8 @@ This program is written by: ANH NHAT LE (Robert) */
 #include <stdlib.h>
 #include <string.h>
 
+#define NUMLETTERS 7
+
 void swapChars(char *a, char *b) {
     
     char temp = *a;
@@ -17,12 +19,12 @@ void swapChars(char *a, char *b) {
 
 void sortLetters(char arr[], int n) {
     
-    for (int a = 0; a < n - 1; a++) {
+    for(int a = 0; a < n - 1; a++) {
         
         int min_idx = a;
-        for (int b = a + 1; b < n; b++) {
+        for(int b = a + 1; b < n; b++) {
             
-            if (arr[b] < arr[min_idx]) {
+            if(arr[b] < arr[min_idx]) {
                 
                 min_idx = b;
                 
@@ -38,7 +40,7 @@ void sortLetters(char arr[], int n) {
 
 int main(void) {
     
-    char letters[8];
+    char letters[NUMLETTERS + 1];
     int n;
     char middle;
     
@@ -46,7 +48,17 @@ int main(void) {
     scanf("%d", &n);
     middle = letters[3];
 
-    sortLetters(letters, 7);
+    sortLetters(letters, NUMLETTERS);
+    int new_idx;
+    for(int c = 0; c < NUMLETTERS; c++) {
+        
+        if(letters[c] == middle) {
+            
+            new_idx = c;
+            return new_idx;
+            
+        }
+        
     return 0;
     
 }
