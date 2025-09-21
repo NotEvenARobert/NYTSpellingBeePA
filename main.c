@@ -49,7 +49,7 @@ int main(void) {
     middle = letters[3];
 
     sortLetters(letters, NUMLETTERS);
-    int new_idx;
+    int new_idx = -1;
     for(int c = 0; c < NUMLETTERS; c++) {
         
         if(letters[c] == middle) {
