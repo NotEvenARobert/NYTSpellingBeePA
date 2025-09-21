@@ -8,6 +8,7 @@ This program is written by: ANH NHAT LE (Robert) */
 #include <string.h>
 
 #define NUMLETTERS 7
+#define MAXWORDSIZE 10
 
 void swapChars(char *a, char *b) {
     
@@ -59,6 +60,17 @@ int main(void) {
             
         }
 
+    }
+
+    char **dictionary = (char**)malloc(n * sizeof(char*));
+    char tempWord[MAXWORDSIZE];
+
+    for(int d = 0; d < n; d++) {
+        
+        scanf("%s", tempWord);
+        dictionary[d] = (char*)malloc((strlen(tempWord) + 1) * sizeof(char));
+        strcpy(dictionary[d], tempWord);
+        
     }
         
     return 0;
