@@ -46,6 +46,7 @@ int main(void) {
     scanf("%d", &n);
     middle = letters[3];
 
+    sortLetters(letters, 7);
     return 0;
     
 }
