@@ -39,6 +39,41 @@ void sortLetters(char arr[], int n) {
     
 }
 
+void findWords(char letters[], int perm[], int used[], int k) {
+    
+    if(k >= 4) {
+
+        char currentWord[NUMLETTERS + 1];
+        for(int e = 0; e < k; e++) {
+            
+            currentWord[e] = letters[perm[e]];
+            
+        }
+        currentWord[k] = '\0';
+        
+    }
+
+    if(k == NUMLETTERS) {
+        
+        return;
+        
+    }
+
+    for(int f = 0; f < NUMLETTERS; f++) {
+
+        if(!used[f]) {
+
+            perm[k] = f;
+            used[f] = 1;
+            findWords(letters, perm, used, k + 1);
+            used[f] = 0;
+            
+        }
+        
+    }
+    
+}
+
 int main(void) {
     
     char letters[NUMLETTERS + 1];
