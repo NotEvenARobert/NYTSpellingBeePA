@@ -39,6 +39,48 @@ void sortLetters(char arr[], int n) {
     
 }
 
+int checkMiddle(const char *word, char middle) {
+
+    for(int g = 0; word[g] != '\0'; g++) {
+
+        if(word[g] == middle) {
+
+        return 1;
+     
+        }
+
+    }
+
+    return 0;
+
+}
+
+int binarySearch(char** dictionary, char* word, int low, int high) {
+    
+    if(low > high) {
+        
+        return 0;
+        
+    }
+
+    int mid = high / 2;
+    int comparison = strcmp(word, dictionary[mid]);
+    if(comparison == 0) {
+        
+        return 1;
+        
+    } else if(comparison < 0) {
+
+        return binarySearch(dictionary, word, low, mid - 1);
+        
+    } else {
+
+        return binarySearch(dictionary, word, mid + 1, high);
+        
+    }
+    
+}
+
 void findWords(char letters[], int perm[], int used[], int k, char middle, int n, char** dictionary) {
     
     if(k >= 4) {
@@ -79,48 +121,6 @@ void findWords(char letters[], int perm[], int used[], int k, char middle, int n
             used[f] = 0;
             
         }
-        
-    }
-    
-}
-
-int checkMiddle(const char *word, char middle) {
-
-    for(int g = 0; word[g] != '\0'; g++) {
-
-        if(word[g] == middle) {
-
-        return 1;
-     
-        }
-
-    }
-
-    return 0;
-
-}
-
-int binarySearch(char** dictionary, char* word, int low, int high) {
-    
-    if(low > high) {
-        
-        return 0;
-        
-    }
-
-    int mid = high / 2;
-    int comparison = strcmp(word, dictionary[mid]);
-    if(comparison == 0) {
-        
-        return 1;
-        
-    } else if(comparison < 0) {
-
-        return binarySearch(dictionary, word, low, mid - 1);
-        
-    } else {
-
-        return binarySearch(dictionary, word, mid + 1, high);
         
     }
     
