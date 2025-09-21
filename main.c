@@ -63,7 +63,7 @@ int binarySearch(char** dictionary, char* word, int low, int high) {
         
     }
 
-    int mid = high / 2;
+    int mid = low + high / 2;
     int comparison = strcmp(word, dictionary[mid]);
     if(comparison == 0) {
         
@@ -162,7 +162,13 @@ int main(void) {
     int perm[NUMLETTERS];
     int used[NUMLETTERS] = {0};
     findWords(letters, perm, used, 0, middle, n, dictionary);
+
+    for(int h = 0; h < n; h++) {
         
+        free(dictionary[h]);
+        
+    }
+    free(dictionary);
     return 0;
     
 }
