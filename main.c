@@ -20,7 +20,7 @@ void sortLetters(char arr[], int n) {
     for (int a = 0; a < n - 1; a++) {
         
         int min_idx = a;
-        for (b = a + 1; b < n; b++) {
+        for (int b = a + 1; b < n; b++) {
             
             if (arr[b] < arr[min_idx]) {
                 
